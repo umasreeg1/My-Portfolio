@@ -128,6 +128,7 @@ STATIC_ROOT=BASE_DIR / 'staticfiles'
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = BASE_DIR / 'media'
 import cloudinary
+from cloudinary_storage.storage import MediaCloudinaryStorage
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dzb5kesrt',
