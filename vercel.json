@@ -1,14 +1,23 @@
 {
-  "builds": [
+"builds":[
+{
+"src":"PortfolioProject/wsgi.py",
+"use":"@vercel/python"
+},
+{
+"src":"staticfiles/(.*)",
+"use":"@vercel/static"
+}
+],
+"routes": [
     {
-      "src": "PortfolioProject/wsgi.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "PortfolioProject/wsgi.py"
-    }
-  ]
+      "src":"/(.*)",
+      "dest":"PortfolioProject/wsgi.py"
+    },
+{
+"src":"/static/(.*)",
+"dest":"/staticfiles/$1"
+}
+],
+"regions":["sin1"]
 }

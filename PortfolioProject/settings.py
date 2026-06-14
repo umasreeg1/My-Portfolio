@@ -125,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static/'] 
 STATIC_ROOT=BASE_DIR / 'staticfiles'
-# MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 # MEDIA_ROOT = BASE_DIR / 'media'
 import cloudinary
 from cloudinary_storage.storage import MediaCloudinaryStorage
@@ -135,4 +135,12 @@ CLOUDINARY_STORAGE = {
     'API_KEY': '849638873712657',
     'API_SECRET': 'wHeXJyvC1AdFZdCG6_vOcAADivE',
 }
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
