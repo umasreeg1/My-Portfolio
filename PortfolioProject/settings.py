@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'PortfolioProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neondb',
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_cF9lO6YhbDmL',
+        'HOST': 'ep-proud-wind-ao2x01gb-pooler.c-2.ap-southeast-1.aws.neon.tech',
+        'PORT': '5432',
     }
 }
 
